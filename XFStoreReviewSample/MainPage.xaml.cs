@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.StoreReview;
 using Xamarin.Forms;
 
 namespace XFStoreReviewSample
@@ -13,6 +14,13 @@ namespace XFStoreReviewSample
         public MainPage()
         {
             InitializeComponent();
+
+            CrossStoreReview.Current.RequestReview(false);
+        }
+
+        void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            CrossStoreReview.Current.OpenStoreListing("21312");
         }
     }
 }
